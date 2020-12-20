@@ -1,0 +1,228 @@
+{
+  "products": [
+    {
+      "url": "pizza_margarita",
+      "productName": "Пицца Маргарита",
+      "productDescription": "Моцарелла, Соус",
+      "price": 100,
+      "images": ["img/Margarita.jpg"],
+      "weight": 339,
+      "relatedProductIds": [7,12,98],
+      "spicy": false,
+      "categoryId": 3,
+      "recommended": true
+    },
+    {
+      "url": "pizza_texas",
+      "productName": "Пицца Техас",
+      "productDescription": "Кукуруза, Лук, Грибы, Колбаски баварские, Моцарелла, Соус",
+      "price": 100,
+      "images": ["img/Texas.jpg"],
+      "weight": 339,
+      "relatedProductIds": [7,12,98],
+      "spicy": true,
+      "categoryId": 3,
+      "recommended": true
+    },
+    {
+      "url": "pizza_hawaii",
+      "productName": "Пицца Гавайская",
+      "productDescription": "Курица, Ананас, Моцарелла, Соус",
+      "price": 120,
+      "images": ["img/Hawaii.jpg"],
+      "weight": 320,
+      "relatedProductIds": [7,12,98],
+      "spicy": false,
+      "categoryId": 3,
+      "recommended": true
+    },
+    {
+      "url": "pizza_barbecue",
+      "productName": "Пицца Барбекю",
+      "productDescription": "Курица, Лук, Бекон, Грибы, Моцарелла, Соус Барбекю",
+      "price": 100,
+      "images": ["img/Barbecue.jpg"],
+      "weight": 339,
+      "relatedProductIds": [7,12,98],
+      "spicy": false,
+      "categoryId": 3,
+      "recommended": true
+    },
+    {
+      "url": "pizza_pepperoni",
+      "productName": "Пицца Пепперони",
+      "productDescription": "Бергадер Блю, Моцарелла, Пепперони, Соус Альфредо",
+      "price": 130,
+      "images": ["img/pepperoni.jpg"],
+      "weight": 296,
+      "relatedProductIds": [7,12,98],
+      "spicy": true,
+      "categoryId": 3,
+      "recommended": true
+    },
+    {
+      "url": "pizza_cantri",
+      "productName": "Пицца Кантри",
+      "productDescription": "Лук, Бекон, Ветчина, Грибы, Моцарелла, Огурцы маринованные, Соус Чесночны",
+      "price": 150,
+      "images": ["img/cantri.jpg"],
+      "weight": 339,
+      "relatedProductIds": [7,12,98],
+      "spicy": true,
+      "categoryId": 3,
+      "recommended": true
+    },
+    {
+      "url": "pizza_vegetable",
+      "productName": "Пицца Овощная Феерия",
+      "productDescription": "Оливки, Лук, Болгарский перец, Грибы, Моцарелла, Помидоры, Соус",
+      "price": 100,
+      "images": ["img/vegetable.jpg"],
+      "weight": 339,
+      "relatedProductIds": [7,12,98],
+      "spicy": false,
+      "categoryId": 3,
+      "recommended": true
+    },
+    {
+      "url": "pizza_karri",
+      "productName": "Пицца Карри",
+      "productDescription": "Курица, Cоус Карри, Лук, Ананас, Моцарелла",
+      "price": 100,
+      "images": ["img/karri.jpg"],
+      "weight": 339,
+      "relatedProductIds": [7,12,98],
+      "spicy": false,
+      "categoryId": 3,
+      "recommended": true
+    },
+    {
+      "url": "pizza_carbonara",
+      "productName": "Пицца Карбонара",
+      "productDescription": "Лук, Бекон, Ветчина, Грибы, Моцарелла, Соус Альфредо",
+      "price": 100,
+      "images": ["img/carbonara.jpg"],
+      "weight": 339,
+      "relatedProductIds": [7,12,98],
+      "spicy": false,
+      "categoryId": 3,
+      "recommended": true
+    },
+    {
+      "url": "pizza_tuscany",
+      "productName": "Пицца Тоскана",
+      "productDescription": "Курица, Фета, Моцарелла, Помидоры черри, Соус Альфредо, Шпинат",
+      "price": 100,
+      "images": ["img/tuscany.jpg"],
+      "weight": 339,
+      "relatedProductIds": [7,12,98],
+      "spicy": true,
+      "categoryId": 3,
+      "recommended": true
+    },
+    {
+      "url": "pizza_spicy",
+      "productName": "Пицца Спайси",
+      "productDescription": "Халапеньо, Бекон, Моцарелла, Пепперони, Помидоры, Соус",
+      "price": 120,
+      "images": ["img/spicy.jpg"],
+      "weight": 320,
+      "relatedProductIds": [7,12,98],
+      "spicy": false,
+      "categoryId": 3,
+      "recommended": true
+    },
+    {
+      "url": "pizza_tuna",
+      "productName": "Пицца Тунец",
+      "productDescription": "Моцарелла, Соус, Тунец",
+      "price": 100,
+      "images": ["img/tuna.jpg"],
+      "weight": 339,
+      "relatedProductIds": [7,12,98],
+      "spicy": false,
+      "categoryId": 3,
+      "recommended": true
+    },
+    {
+      "url": "pizza_provence",
+      "productName": "Пицца Прованс",
+      "productDescription": "Бергадер Блю, Ветчина, Моцарелла, Пепперони, Помидоры, Соус Альфредо",
+      "price": 130,
+      "images": ["img/provence.jpg"],
+      "weight": 296,
+      "relatedProductIds": [7,12,98],
+      "spicy": true,
+      "categoryId": 3,
+      "recommended": true
+    },
+    {
+      "url": "pizza_five_cheeses",
+      "productName": "Пицца Пять Сыров",
+      "productDescription": "Фета, Пармезан, Бергадер Блю, Моцарелла, Соус Альфредо, Чеддер",
+      "price": 150,
+      "images": ["img/five_cheeses.jpg"],
+      "weight": 339,
+      "relatedProductIds": [7,12,98],
+      "spicy": true,
+      "categoryId": 3,
+      "recommended": true
+    },
+    {
+      "url": "pizza_salmon_philadelphia",
+      "productName": "Пицца Лосось Филадельфия",
+      "productDescription": "Крем-сыр Филадельфия, Лосось, Моцарелла, Соус Альфредо",
+      "price": 100,
+      "images": ["img/salmon_philadelphia.jpg"],
+      "weight": 339,
+      "relatedProductIds": [7,12,98],
+      "spicy": false,
+      "categoryId": 3,
+      "recommended": true
+    },
+    {
+      "url": "pizza_spinach_and_feta",
+      "productName": "Пицца Шпинат и Фета",
+      "productDescription": "Фета, Оливки, Болгарский перец, Грибы, Моцарелла, Помидоры, Соус Альфредо, Шпинат",
+      "price": 100,
+      "images": ["img/spinach_and_feta.jpg"],
+      "weight": 339,
+      "relatedProductIds": [7,12,98],
+      "spicy": false,
+      "categoryId": 3,
+      "recommended": true
+    }
+  ],
+  "productsCategories": [
+    {
+    "url": "the_best",
+    "name": "Пицца: Лучшая цена",
+    "category_id": "1"},
+    {
+      "url": "classic",
+      "name": "Пицца: Классические",
+      "category_id": "2"},
+    {
+      "url": "branded",
+      "name": "Пицца: Фирменные",
+      "category_id": "3"}
+    ],
+  "actions": [{
+    "url": "20_na_vse",
+    "name": "20% на все!",
+    "description": "Новое выгодное предложение! Получай 20% скидки на свой заказ в пиццерии! Акция распространяется на все позиции с меню.Акция действует только для заказов в пиццерии и с собой. Акционное предложение не распространяется на заказы на доставку. Акция не суммируется с другими акционными предложениями.Акция действует с 16.09.20 по 31.12.20 г.",
+    "datePosted": "15.09.2020"
+  },
+    {"url": "crazy_monday",
+    "name": "Сумасшедший понедельник",
+    "description": "Каждый понедельник Domino's проводит невероятную акцию «Сумасшедший понедельник» - покупай одну пиццу и получай вторую со скидкой 80%!",
+    "datePosted": "25.11.2020"}
+   ],
+  "orders": [],
+
+  "infoPages": [{
+    "url": "about",
+    "name": "О нас",
+    "content": "Что может быть лучше для посиделок в веселой дружеской компании? Конечно же пицца! Разнообразные начинки на любой вкус, тающий на языке сыр, а какой аромат! Именно поэтому мы создали нашу пиццерию Pizza Time, с которой вы не останетесь голодными или недовольными"
+   }]
+    }
