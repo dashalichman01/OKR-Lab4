@@ -187,7 +187,7 @@
       "productName": "Пицца Лосось Филадельфия",
       "productDescription": "Крем-сыр Филадельфия, Лосось, Моцарелла, Соус Альфредо",
       "price": 220,
-      "images": ["img/salmon_philadelphia.jpg", "img/salmon_philadelphia2 .jpg"],
+      "images": ["img/salmon_philadelphia.jpg", "img/salmon_philadelphia2.jpg"],
       "weight": 400,
       "relatedProductIds": [7,12,14],
       "spicy": false,
