@@ -1,0 +1,28 @@
+{{#each items}}
+<div class="w-full lg:flex item-container-id-{{this.id}}">
+    <div class="text-center w-full border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+        <div class="text-black font-bold text-xl mb-2">{{ this.productName }}</div>
+
+        <div class="flex justify-between ">
+            <img src="{{this.image}}" alt="" class="rounded-full w-64 object-cover mx-4 shadow inline-block" style="max-width: 450px">
+            <div class="w-1/2 text-right">
+                <p class="mt-4">{{this.productDescription}}</p>
+                <span class="text-gray-500 mt-2">
+                    <h1>Price: {{ this.price }} грн.</h1>
+                </span>
+                <span class="text-gray-500 mt-2">
+                    <h1>Count: x{{ this.count }} </h1>
+                </span>
+                <span class="text-gray-500 mt-2">
+                    <h1>Sum: {{ this.totalPrice }} грн.</h1>
+                </span>
+                <br>
+                <button class="outline-none py-2 inline-flex px-4 text-lg font-semibold leading-5 text-green-800 bg-red-100 rounded-full hover:pointer">
+                      Remove 1
+                </button>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}

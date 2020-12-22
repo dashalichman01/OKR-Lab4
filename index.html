@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tasty Pizza</title>
+    <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="shortcut icon" href="img/favicon.ico">
+</head>
+<body>
+
+<!-- This example requires Tailwind CSS v2.0+ -->
+
+<div>
+    <nav class="bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img class="h-8 w-8" src="img/pizza.png" alt="Workflow">
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4 my-navbar">
+                            <a href="/" class="route px-3 py-2 rounded-md text-sm font-medium bg-gray-900 text-white">Main page</a>
+
+                            <a href="/catalog" class="route px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Catalog</a>
+
+                            <a href="/actions" class="route px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Action</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <a href="/cart" class="route">
+                            <span class="cartState text-white">0</span>
+
+                            <button class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <!-- Mobile menu button -->
+                    <button class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <!--
+                          Heroicon name: menu
+
+                          Menu open: "hidden", Menu closed: "block"
+                        -->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!--
+                          Heroicon name: x
+
+                          Menu open: "block", Menu closed: "hidden"
+                        -->
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/" class="route bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+
+                <a href="/catalog" class="route text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+
+                <a href="/action/sale" class="route text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+
+                <a href="/cart" class="route text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+            </div>
+            <div class="pt-4 pb-3 border-t border-gray-700">
+                <div class="flex items-center px-5">
+                    <div class="flex-shrink-0">
+                        <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                    </div>
+
+                    <button class="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        <span class="sr-only">View notifications</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mt-3 px-2 space-y-1">
+                    <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Your Profile</a>
+
+                    <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Settings</a>
+
+                    <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Sign out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <div class="px-4 py-6 sm:px-0">
+                <div class="rounded-lg h-96" id="views">
+
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+<div class="container-d w-full h-full z-20 fixed inset-0 hidden" id="preloader">
+    <div class="circle-d circle-d-1"></div>
+    <div class="circle-d circle-d-2"></div>
+    <div class="circle-d circle-d-3"></div>
+    <div class="circle-d circle-d-4"></div>
+    <div class="circle-d circle-d-5"></div>
+</div>
+
+<script src="src/cart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
+<script src="src/router.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        Cart.setTotalProducts();
+    });
+
+    function setHandlerToLinksRoute() {
+        // обработчик нажатий на ссылки
+        let handler = event =>  {
+            let navBarRoutes = document.querySelectorAll('.my-navbar a.route');
+
+            for( let anchor of navBarRoutes ) {
+                anchor.classList.remove('bg-gray-900');
+                anchor.classList.remove('text-white');
+                anchor.classList.add('text-gray-300');
+                anchor.classList.add('hover:bg-gray-700');
+                anchor.classList.add('hover:text-white');
+            }
+
+            event.target.classList.add('bg-gray-900');
+            event.target.classList.add('text-white');
+            event.target.classList.remove('text-gray-300');
+            event.target.classList.remove('hover:bg-gray-700');
+            event.target.classList.remove('hover:text-white');
+
+            // получаем запрошенный url
+            let url = new URL(event.currentTarget.href);
+
+            // запускаем роутер, предавая ему path
+            Router.dispatch(url.pathname);
+
+            // запрещаем дальнейший переход по ссылке
+            event.preventDefault();
+        };
+
+        // получаем все ссылки на странице
+        let anchors = document.querySelectorAll('a.route');
+
+        // вешаем на событие onclick обработчик
+        for( let anchor of anchors ) anchor.onclick = handler;
+    }
+
+    function setHandlerToAddToCartButton() {
+        // обработчик нажатий на ссылки
+        let handler = event =>  {
+            let id = event.target.attributes['data-id']['value'];
+            Cart.add(id, 1);
+            Cart.setTotalProducts();
+        };
+
+        // получаем все ссылки на странице
+        let anchors = document.querySelectorAll('.addToCart');
+
+        // вешаем на событие onclick обработчик
+        for( let anchor of anchors ) anchor.onclick = handler;
+    }
+
+    // получаем запрошенный url
+    let url = new URL(location.href);
+
+    // инициализируем роутер
+    Router.init();
+
+    // запускаем главную страницу
+    Router.dispatch(url.hash.replace('#', '').length > 0 ? url.hash.replace('#', '') : url.pathname);
+
+    setHandlerToLinksRoute();
+
+</script>
+</body>
+</html>
