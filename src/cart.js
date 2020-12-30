@@ -26,7 +26,6 @@ let Cart = {
 
     setTotalProducts: function () {
         let total = this.getTotalProducts();
-        // console.log(total);
         document.querySelector(".cartState").innerHTML = total;
     },
 

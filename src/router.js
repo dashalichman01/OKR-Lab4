@@ -1,4 +1,5 @@
 let Router = {
+
     // маршруты и соответствующие им обработчики
     routes: {
         "/":                "index", // +
@@ -12,14 +13,14 @@ let Router = {
         "/order/:id":       "orderShow",
     },
 
-    // метод проходится по массиву routes и создает
+    // метод проходиться по массиву routes и создает
     // создает объект на каждый маршрут
     init: function() {
         // объявляем свойство _routes
         this._routes = [];
         for( let route in this.routes ) {
 
-            // имя метода-обрaботчика
+            // имя метода-обрботчика
             let method = this.routes[route];
 
             // добавляем в массив роутов объект
@@ -84,6 +85,7 @@ let Router = {
 
         // количество маршрутов в массиве
         let i = this._routes.length;
+        let flag = false;
 
         // цикл до конца
         while( i-- ) {
@@ -93,19 +95,47 @@ let Router = {
             let args = path.match(this._routes[i].pattern);
             // если есть аргументы
             if( args ) {
+                flag = true;
                 // вызываем обработчик из объекта, передавая ему аргументы
                 // args.slice(1) отрезает всю найденную строку
                 this._routes[i].callback.apply(this,args.slice(1));
                 window.history.pushState({route: path}, "some title", '#'+path);
             }
         }
+        if(!flag) {
+            this._routes[0].callback.apply(this);
+            window.history.pushState({route: '/'}, "some title", '#'+'/');
+        }
+    },
+
+    createOrder: function (params) {
+        let formBody = [];
+        for (let property in params) {
+            let encodedKey = encodeURIComponent(property);
+            let encodedValue = encodeURIComponent(params[property]);
+            formBody.push(encodedKey + "=" + encodedValue);
+        }
+
+        formBody = formBody.join("&");
+
+        let request = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            },
+            body: formBody
+        };
+
+        fetch("https://my-json-server.typicode.com/dashalichman01/OKR-Lab4/orders", request)
+            .then(response => response.json())
+            .then(data => console.log(data));
     },
 
     makeRequest: function(url = '', callback) {
         let preloader = document.querySelector('#preloader')
         preloader.classList.remove('hidden');
 
-        let proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+        let proxyUrl = 'http://my-json-server.typicode.com/dashalichman01/OKR-Lab4/',
             targetUrl = url
 
         fetch(proxyUrl + targetUrl)
@@ -125,7 +155,7 @@ let Router = {
     index: function() {
         let context = this;
 
-        this.makeRequest("http://my-json-server.typicode.com/dashalichman01/OKR-Lab4/products", function (data) {
+        this.makeRequest("products", function (data) {
             for (let item in data) {
                 data[item].image = data[item].images[0];
             }
@@ -139,7 +169,7 @@ let Router = {
 
     catalogIndex: function() {
         let context = this;
-        this.makeRequest("http://my-json-server.typicode.com/dashalichman01/OKR-Lab4/productsCategories", function (data) {
+        this.makeRequest("productsCategories", function (data) {
             context.showView("catalog", {items: data})
                 .then(result => {
                     setHandlerToLinksRoute();
@@ -149,14 +179,27 @@ let Router = {
 
     catalogShow: function(id) {
         let context = this;
-        this.makeRequest("http://my-json-server.typicode.com/dashalichman01/OKR-Lab4/productsCategories/"+id, function (data) {
-            context.showView("catalogShow", {items: [data]});
+        this.makeRequest("productsCategories/"+id, function (data) {
+            let products = context.makeRequest("products", function (products) {
+                for(let i in products) {
+                    if(data['id'] == products[i]['categoryId']) {
+                        products[i]['image'] = products[i]['images'][0];
+                        if(!data.hasOwnProperty("products")) {
+                            data['products'] = [];
+                        }
+                        data['products'].push(products[i]);
+                    }
+                }
+                context.showView("catalogShow", {items: [data]}).then(() => {
+                    setHandlerToAddToCartButton();
+                });
+            });
         });
     },
 
     productShow: function(id) {
         let context = this;
-        this.makeRequest("http://my-json-server.typicode.com/dashalichman01/OKR-Lab4/products/"+id, function (data) {
+        this.makeRequest("products/"+id, function (data) {
             context.showView("productShow", {items: [data]});
         });
     },
@@ -164,7 +207,7 @@ let Router = {
     actionIndex: function() {
         let context = this;
 
-        this.makeRequest("http://my-json-server.typicode.com/dashalichman01/OKR-Lab4/actions", function (data) {
+        this.makeRequest("actions", function (data) {
             context.showView("actions", {items: data})
                 .then(result => {
                     setHandlerToLinksRoute();
@@ -175,7 +218,7 @@ let Router = {
     actionShow: function(id) {
         let context = this;
 
-        this.makeRequest("http://my-json-server.typicode.com/dashalichman01/OKR-Lab4/actions/"+id, function (data) {
+        this.makeRequest("actions/"+id, function (data) {
             context.showView("actions", {items: [data]});
         });
     },
@@ -183,7 +226,7 @@ let Router = {
     cartShow: function() {
         let context = this;
 
-        this.makeRequest("http://my-json-server.typicode.com/dashalichman01/OKR-Lab4/products", function (data) {
+        this.makeRequest("products", function (data) {
             let cart = Cart.getCart();
 
             for (let item in data) {
@@ -208,6 +251,13 @@ let Router = {
                 .then(result => {
                     setHandlerToLinksRoute();
                     setHandlerToAddToCartButton();
+                    document.querySelector("#createOrder").addEventListener('click', function (e) {
+                        window.localStorage.removeItem("cart");
+                        context.createOrder(
+                            {}
+                        );
+
+                    })
                 });
         });
     },
