@@ -135,7 +135,7 @@ let Router = {
         let preloader = document.querySelector('#preloader')
         preloader.classList.remove('hidden');
 
-        let proxyUrl = 'http://my-json-server.typicode.com/dashalichman01/OKR-Lab4/',
+        let proxyUrl = 'https://my-json-server.typicode.com/dashalichman01/OKR-Lab4/',
             targetUrl = url
 
         fetch(proxyUrl + targetUrl)
